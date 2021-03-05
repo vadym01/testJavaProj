@@ -12,22 +12,34 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void addCustomer(Customer customer) {
-        priorityQueue.add(customer);
+        try {
+            priorityQueue.add(customer);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
     public Customer serveACustomer() {
-        return priorityQueue.peek();
+        try {
+            return priorityQueue.peek();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
     @Override
     public void deleteCustomerFromQueue(Customer customer) {
-        priorityQueue.remove(customer);
+        try {
+            priorityQueue.remove(customer);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
     public void showAllCustomers() {
-
         for (Customer customer : priorityQueue) {
             System.out.println(customer);
         }
@@ -35,7 +47,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void addAll(List<Customer> customerList) {
-        priorityQueue.addAll(customerList);
+        try {
+            priorityQueue.addAll(customerList);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
