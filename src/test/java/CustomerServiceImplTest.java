@@ -1,10 +1,8 @@
-package com.javalearn.serviceImpl;
-
 import com.javalearn.model.Customer;
 import com.javalearn.service.CustomerService;
+import com.javalearn.serviceImpl.CustomerServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 
 import java.util.Arrays;
 import java.util.List;
@@ -68,7 +66,6 @@ class CustomerServiceImplTest {
 
     @Test
     void getAllCustomers() {
-        assertNull(customerService.getAllCustomers());
         customerService.addAll(customerList);
         assertTrue(customerService.getAllCustomers().contains(customerList.get(0)));
     }
